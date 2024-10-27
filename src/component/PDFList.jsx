@@ -3,7 +3,6 @@ import { storage } from "../firebase";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { AiFillCaretDown } from "react-icons/ai"; // Importing react-icons for dropdown arrow
 import { toast } from "react-toastify";
-import ClipLoader from "react-spinners/ClipLoader";
 
 import "react-toastify/dist/ReactToastify.css";
 const PDFList = () => {
@@ -50,62 +49,110 @@ const PDFList = () => {
 
   return (
     <div>
-      {!loading ? (
-        <ul className="flex flex-col gap-2 p-2 m-2">
-          {folders.map((folder, index) => (
-            <li key={index} className="mb-4">
-              <div
-                className="flex items-center justify-between w-[300px] md:w-[500px] bg-blue-700 text-white py-2 px-4 rounded-lg cursor-pointer"
-                onClick={() => handleToggle(index)}
-              >
-                <span>{folder.folderPath.toUpperCase()}</span>
-                <AiFillCaretDown
-                  className={`transform ${
-                    openDropdown === index ? "rotate-180" : ""
+      <div className=" h-[350px] md:h-[450px]">
+        {!loading ? (
+          <ul className="flex flex-col gap-2 p-2 m-2">
+            {folders.map((folder, index) => (
+              <li key={index} className="mb-4">
+                <div
+                  className="flex items-center justify-between w-[300px] md:w-[500px] bg-blue-700 text-white py-2 px-4 rounded-lg cursor-pointer"
+                  onClick={() => handleToggle(index)}
+                >
+                  <span>{folder.folderPath.toUpperCase()}</span>
+                  <AiFillCaretDown
+                    className={`transform ${
+                      openDropdown === index ? "rotate-180" : ""
+                    } transition-transform duration-500 ease-in-out`}
+                  />
+                </div>
+
+                <div
+                  className={`overflow-hidden transition-max-height duration-1000 ease-in-out ${
+                    openDropdown === index ? "max-h-screen" : "max-h-0"
                   }`}
-                />
+                >
+                  {openDropdown === index && (
+                    <ul className="bg-white shadow-lg border border-black mx-auto rounded-lg mt-1 w-[290px] md:w-[490px] overflow-auto divide-y divide-gray-200">
+                      {folder.items.length > 0 ? (
+                        folder.items.map((item, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={item.url}
+                              rel="noopener noreferrer"
+                              className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                              onClick={() =>
+                                toast.info("Downloading....", {
+                                  position: "bottom-center",
+                                  autoClose: 5000,
+                                  hideProgressBar: false,
+                                  closeOnClick: true,
+                                  pauseOnHover: true,
+                                  draggable: true,
+                                  progress: undefined,
+                                  theme: "dark",
+                                })
+                              }
+                            >
+                              {item.name}
+                            </a>
+                          </li>
+                        ))
+                      ) : (
+                        <li className="px-4 py-2">Coming Soon</li>
+                      )}
+                    </ul>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div className="w-[900px] p-4">
+            <div className="border flex flex-col gap-6 border-blue-300 shadow rounded-md p-4 h-[280px] w-[300px] md:w-[500px] mx-auto">
+              <div className="animate-pulse flex space-x-4">
+                <div className="rounded-full bg-slate-700 h-10 w-10"></div>
+                <div className="flex-1 space-y-6 py-1">
+                  <div className="h-2 bg-slate-700 rounded"></div>
+                  <div className="space-y-3">
+                    <div className="grid grid-cols-3 gap-4">
+                      <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+                      <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+                    </div>
+                    <div className="h-2 bg-slate-700 rounded"></div>
+                  </div>
+                </div>
               </div>
 
-              {/* Dropdown menu */}
-              {openDropdown === index && (
-                <ul className="bg-white shadow-lg rounded-lg mt-2 w-[300px] md:w-[500px] overflow-auto divide-y divide-gray-200">
-                  {folder.items.length > 0 ? (
-                    folder.items.map((item, idx) => (
-                      <li key={idx}>
-                        <a
-                          href={item.url}
-                          rel="noopener noreferrer"
-                          className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                          onClick={() =>
-                            toast.info("Downloading....", {
-                              position: "bottom-center",
-                              autoClose: 5000,
-                              hideProgressBar: false,
-                              closeOnClick: true,
-                              pauseOnHover: true,
-                              draggable: true,
-                              progress: undefined,
-                              theme: "dark",
-                            })
-                          }
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))
-                  ) : (
-                    <li className="px-4 py-2">Coming Soon</li>
-                  )}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <div className="flex items-center mt-10 ">
-          <ClipLoader color="#9771FF" size={100} />
-        </div>
-      )}
+              <div className="animate-pulse flex space-x-4">
+                <div className="rounded-full bg-slate-700 h-10 w-10"></div>
+                <div className="flex-1 space-y-6 py-1">
+                  <div className="h-2 bg-slate-700 rounded"></div>
+                  <div className="space-y-3">
+                    <div className="grid grid-cols-3 gap-4">
+                      <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+                      <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+                    </div>
+                    <div className="h-2 bg-slate-700 rounded"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="animate-pulse flex space-x-4">
+                <div className="rounded-full bg-slate-700 h-10 w-10"></div>
+                <div className="flex-1 space-y-6 py-1">
+                  <div className="h-2 bg-slate-700 rounded"></div>
+                  <div className="space-y-3">
+                    <div className="grid grid-cols-3 gap-4">
+                      <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+                      <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+                    </div>
+                    <div className="h-2 bg-slate-700 rounded"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

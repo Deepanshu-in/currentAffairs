@@ -50,7 +50,7 @@ const Header = () => {
   });
   return (
     <header
-      className="header flex items-center mb-10 border border-b-2 p-6"
+      className="header flex items-center border border-b-2 p-6"
       ref={headerRef}
     >
       <div className="container">
