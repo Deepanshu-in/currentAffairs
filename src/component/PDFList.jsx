@@ -7,7 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 const PDFList = () => {
   const [folders, setFolders] = useState([]); // To store folder paths and their contents
   const [openDropdown, setOpenDropdown] = useState(null); // To track which dropdown is open
-
   useEffect(() => {
     const fetchFoldersAndContents = async () => {
       const folderRef = ref(storage, "/"); // Root folder

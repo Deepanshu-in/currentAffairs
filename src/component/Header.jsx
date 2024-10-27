@@ -1,8 +1,8 @@
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.json";
 import { Link, NavLink } from "react-router-dom";
-import { useEffect, useRef, useContext } from "react";
+import { useEffect, useRef } from "react";
 import { BiMenu } from "react-icons/bi";
-import headerbg from "../assets/header-bg.png";
+import Lottie from "react-lottie";
 
 const navLinks = [
   {
@@ -21,7 +21,14 @@ const navLinks = [
 const Header = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
-
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: logo,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   const handleStickyHeader = () => {
     window.addEventListener("scroll", () => {
       if (
@@ -51,7 +58,7 @@ const Header = () => {
           {/* logo */}
           <div>
             <Link to="/">
-              <img src={logo} className="h-12 w-16"></img>
+              <Lottie options={defaultOptions} />
             </Link>
           </div>
 

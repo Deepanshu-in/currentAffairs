@@ -1,8 +1,19 @@
 // App.js
 import PDFList from "./component/PDFList";
 import Header from "./component/Header";
+import downloadAnimation from "./assets/downloadAnimation.json";
+import Lottie from "react-lottie";
+
 import "./App.css";
 function App() {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: downloadAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
     <div>
       <Header />
@@ -10,7 +21,9 @@ function App() {
         <h1 className=" text-primaryColor text-3xl font-bold font-sans">
           Current Affairs PDFs
         </h1>
-        <h3>Download now!</h3>
+        <div className="h-[40px]">
+          <Lottie options={defaultOptions} />
+        </div>
         <PDFList />
       </div>
     </div>
