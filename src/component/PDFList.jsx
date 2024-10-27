@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { storage } from "../firebase";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { AiFillCaretDown } from "react-icons/ai"; // Importing react-icons for dropdown arrow
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const PDFList = () => {
   const [folders, setFolders] = useState([]); // To store folder paths and their contents
   const [openDropdown, setOpenDropdown] = useState(null); // To track which dropdown is open
@@ -71,6 +72,18 @@ const PDFList = () => {
                         href={item.url}
                         rel="noopener noreferrer"
                         className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                        onClick={() =>
+                          toast.info("Downloading....", {
+                            position: "bottom-center",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "dark",
+                          })
+                        }
                       >
                         {item.name}
                       </a>
