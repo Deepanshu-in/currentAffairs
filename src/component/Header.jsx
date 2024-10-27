@@ -29,25 +29,25 @@ const Header = () => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-  const handleStickyHeader = () => {
-    window.addEventListener("scroll", () => {
-      if (
-        document.body.scrollTop > 80 ||
-        document.documentElement.scrollTop > 80
-      ) {
-        headerRef.current.classList.add("sticky_header");
-      } else {
-        headerRef.current.classList.remove("sticky_header");
-      }
-    });
-  };
+  // const handleStickyHeader = () => {
+  //   window.addEventListener("scroll", () => {
+  //     if (
+  //       document.body.scrollTop > 80 ||
+  //       document.documentElement.scrollTop > 80
+  //     ) {
+  //       headerRef.current.classList.add("sticky_header");
+  //     } else {
+  //       headerRef.current.classList.remove("sticky_header");
+  //     }
+  //   });
+  // };
 
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
 
-  useEffect(() => {
-    handleStickyHeader();
-    return () => window.removeEventListener("scroll", handleStickyHeader);
-  });
+  // useEffect(() => {
+  //   handleStickyHeader();
+  //   return () => window.removeEventListener("scroll", handleStickyHeader);
+  // });
   return (
     <header
       className="header flex items-center border border-b-2 p-6"
@@ -56,12 +56,14 @@ const Header = () => {
       <div className="container">
         <div className="flex items-center justify-between">
           {/* logo */}
-          <div className="h-[80px]">
+          <div className="h-[60px] md:h-[80px]">
             <Link to="/">
               <Lottie options={defaultOptions} />
             </Link>
           </div>
-
+          <h1 className="md:hidden font-bold text-2xl text-primaryColor">
+            Bihar Insights
+          </h1>
           {/* menu */}
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>
             <ul className="menu flex items-center gap-6 md:gap-[2.7rem]">

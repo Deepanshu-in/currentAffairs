@@ -47,11 +47,11 @@ const Footer = () => {
     },
   };
   return (
-    <footer className="pb-5 border border-t-gray">
-      <div className="container mt-2">
-        <div className=" justify-between flex-wrap gap-[30px]">
-          <div className="flex flex-col md:flex-row justify-between flex-wrap md:items-center">
-            <div className="w-[80px] h-[55px]">
+    <footer className="pb-5 border border-t-gray ">
+      <div className="container mt-2 ml-[2px] ">
+        <div className="justify-between flex-wrap gap-[30px]">
+          <div className="flex flex-col md:flex-row justify-between items-start flex-wrap md:items-center">
+            <div className="w-[50px] h-[50px]">
               <Lottie options={defaultOptions} />
             </div>
             <p className="text-[16px] leading-7 font-[400] text-textColor mt-4">
