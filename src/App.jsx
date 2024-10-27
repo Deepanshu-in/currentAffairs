@@ -18,8 +18,8 @@ function App() {
     <div>
       <Header />
       <div className="flex flex-col items-center gap-4">
-        <h1 className=" text-primaryColor text-3xl font-bold font-sans">
-          Current Affairs PDFs
+        <h1 className=" text-primaryColor text-3xl font-extrabold font-sans">
+          BIHAR CURRENT AFFAIRS
         </h1>
         <div className="h-[40px]">
           <Lottie options={defaultOptions} />

@@ -50,13 +50,13 @@ const Header = () => {
   });
   return (
     <header
-      className="header flex items-center mb-10 border border-b-2 p-8"
+      className="header flex items-center mb-10 border border-b-2 p-6"
       ref={headerRef}
     >
       <div className="container">
         <div className="flex items-center justify-between">
           {/* logo */}
-          <div>
+          <div className="h-[80px]">
             <Link to="/">
               <Lottie options={defaultOptions} />
             </Link>
