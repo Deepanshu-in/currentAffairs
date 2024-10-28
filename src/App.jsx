@@ -26,20 +26,20 @@ function App() {
     },
   };
   return (
-    <div>
+    <div className="relative">
       <Header />
-      <div className="relative">
+      <div className="">
         {/* Lottie background (below layer) */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 -z-10">
           <Lottie options={bgAni} />
         </div>
 
         {/* Content (upper layer) */}
-        <div className="bg-blue-0 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100 flex flex-col items-center gap-4">
-          <h1 className="text-primaryColor md:text-3xl text-2xl font-extrabold mt-8">
+        <div className="bg-blue-0 mx-auto my-2 bg-clip-padding backdrop-filter h-[500px] md:h-[640px] w-[350px] rounded-2xl md:w-[550px] backdrop-blur-sm bg-opacity-20 border border-black flex flex-col items-center gap-4">
+          <h1 className=" text-headingColor md:text-3xl text-xl mt-8">
             BIHAR CURRENT AFFAIRS
           </h1>
-          <p1 className="text-[16px] leading-7 font-[400]">
+          <p1 className="text-[12px] md:text-[16px] leading-7 md:font-[400] text-wrap">
             A single platform for all the bihar resources you need ! 👋
           </p1>
           <div className="h-[45px]">

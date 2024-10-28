@@ -3,6 +3,7 @@ import { storage } from "../firebase";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { AiFillCaretDown } from "react-icons/ai"; // Importing react-icons for dropdown arrow
 import { toast } from "react-toastify";
+import { IoCloudDownloadOutline } from "react-icons/io5";
 
 import "react-toastify/dist/ReactToastify.css";
 const PDFList = () => {
@@ -55,7 +56,7 @@ const PDFList = () => {
             {folders.map((folder, index) => (
               <li key={index} className="mb-4">
                 <div
-                  className="flex items-center justify-between w-[300px] md:w-[500px] bg-blue-700 text-white py-2 px-4 rounded-lg cursor-pointer"
+                  className="flex items-center justify-between w-[300px] md:w-[500px] border border-black shadow-lg bg-blue-700 text-white py-2 px-4 rounded-lg cursor-pointer"
                   onClick={() => handleToggle(index)}
                 >
                   <span>{folder.folderPath.toUpperCase()}</span>
@@ -72,18 +73,18 @@ const PDFList = () => {
                   }`}
                 >
                   {openDropdown === index && (
-                    <ul className="bg-white shadow-lg border border-black mx-auto rounded-lg mt-1 w-[290px] md:w-[490px] overflow-auto divide-y divide-gray-200">
+                    <ul className="bg-white shadow-lg border border-black mx-auto rounded-lg mt-1 w-[290px] md:w-[490px] overflow-auto divide-y divide-gray-200  hover:bg-gray-100 cursor-pointer">
                       {folder.items.length > 0 ? (
                         folder.items.map((item, idx) => (
                           <li key={idx}>
                             <a
                               href={item.url}
                               rel="noopener noreferrer"
-                              className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                              className="flex justify-between px-4 items-center py-2 text-gray-800"
                               onClick={() =>
                                 toast.info("Downloading....", {
                                   position: "bottom-center",
-                                  autoClose: 5000,
+                                  autoClose: 2000,
                                   hideProgressBar: false,
                                   closeOnClick: true,
                                   pauseOnHover: true,
@@ -94,11 +95,12 @@ const PDFList = () => {
                               }
                             >
                               {item.name}
+                              <IoCloudDownloadOutline />
                             </a>
                           </li>
                         ))
                       ) : (
-                        <li className="px-4 py-2">Coming Soon</li>
+                        <li className="px-4 py-2">Coming Soon...</li>
                       )}
                     </ul>
                   )}
@@ -108,7 +110,7 @@ const PDFList = () => {
           </ul>
         ) : (
           <div className="w-[900px] p-4">
-            <div className="border flex flex-col gap-6 border-blue-300 shadow rounded-md p-4 h-[280px] w-[300px] md:w-[500px] mx-auto">
+            <div className="border flex flex-col gap-6 border-black shadow rounded-md p-4 h-[280px] w-[300px] md:w-[500px] mx-auto">
               <div className="animate-pulse flex space-x-4">
                 <div className="rounded-full bg-slate-700 h-10 w-10"></div>
                 <div className="flex-1 space-y-6 py-1">

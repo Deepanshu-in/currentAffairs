@@ -47,7 +47,7 @@ const Footer = () => {
     },
   };
   return (
-    <footer className="pb-5 border border-t-primaryColor ">
+    <footer className="w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 border border-t-gray-50 h-[100px]">
       <div className="container mt-1 ml-[2px] ">
         <div className="justify-between flex-wrap gap-[30px]">
           <div className="flex flex-col md:flex-row justify-between items-start flex-wrap md:items-center">
@@ -61,7 +61,7 @@ const Footer = () => {
             <h1 className="text-[16px] leading-7 font-[400] text-textColor mt-1">
               Support: bhawnagupta7250@gmail.com
             </h1>
-            <div className="flex items-center gap-3 mt-4">
+            <div className="flex items-center gap-3 mt-4 pb-2">
               {socialLinks.map((item, index) => (
                 <Link
                   to={item.path}
