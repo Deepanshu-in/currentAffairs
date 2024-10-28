@@ -47,7 +47,7 @@ const Footer = () => {
     },
   };
   return (
-    <footer className="w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 border border-t-gray-50 h-[100px]">
+    <footer className="bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30 border-t border-purpleColor h-[100px]">
       <div className="container mt-1 ml-[2px] ">
         <div className="justify-between flex-wrap gap-[30px]">
           <div className="flex flex-col md:flex-row justify-between items-start flex-wrap md:items-center">

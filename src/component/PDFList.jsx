@@ -50,7 +50,7 @@ const PDFList = () => {
 
   return (
     <div>
-      <div className=" h-[350px] md:h-[450px]">
+      <div className=" h-[300px] md:h-[450px] overflow-scroll">
         {!loading ? (
           <ul className="flex flex-col gap-2 p-2 m-2">
             {folders.map((folder, index) => (
@@ -73,14 +73,14 @@ const PDFList = () => {
                   }`}
                 >
                   {openDropdown === index && (
-                    <ul className="bg-white shadow-lg border border-black mx-auto rounded-lg mt-1 w-[290px] md:w-[490px] overflow-auto divide-y divide-gray-200  hover:bg-gray-100 cursor-pointer">
+                    <ul className="bg-white shadow-lg border max-h-[150px] overflow-scroll border-black mx-auto rounded-lg mt-1 w-[290px] md:w-[490px] divide-y divide-gray-400 cursor-pointer">
                       {folder.items.length > 0 ? (
                         folder.items.map((item, idx) => (
                           <li key={idx}>
                             <a
                               href={item.url}
                               rel="noopener noreferrer"
-                              className="flex justify-between px-4 items-center py-2 text-gray-800"
+                              className="flex justify-between px-4 items-center py-2 text-gray-800  hover:bg-gray-200 "
                               onClick={() =>
                                 toast.info("Downloading....", {
                                   position: "bottom-center",
@@ -94,7 +94,9 @@ const PDFList = () => {
                                 })
                               }
                             >
-                              {item.name}
+                              <div className="max-w-[150px] overflow-scroll">
+                                {item.name.slice(0, 50)}
+                              </div>
                               <IoCloudDownloadOutline />
                             </a>
                           </li>
