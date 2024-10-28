@@ -25,7 +25,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="h-full w-full bg-blue-0 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray-100">
+      <header className="h-full w-full bg-blue-300 py-4 md:py-2 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30 border-b border-purpleColor">
         <div className="container">
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -34,7 +34,7 @@ const Header = () => {
                 <Lottie options={defaultOptions} />
               </Link>
             </div>
-            <h1 className="md:hidden text-2xl text-primaryColor">
+            <h1 className="md:hidden text-xl text-primaryColor">
               Bihar Insights
             </h1>
 

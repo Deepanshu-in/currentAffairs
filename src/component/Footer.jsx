@@ -51,16 +51,13 @@ const Footer = () => {
       <div className="container mt-1 ml-[2px] ">
         <div className="justify-between flex-wrap gap-[30px]">
           <div className="flex flex-col md:flex-row justify-between items-start flex-wrap md:items-center">
-            <div className="w-[50px] h-[50px]">
-              <Lottie options={defaultOptions} />
-            </div>
-            <h1 className="text-[16px] leading-7 font-[400] text-textColor mt-4">
+            <h2 className="text-[16px] leading-7 font-[400] text-textColor mt-4">
               Copyright &copy;{year} BiharInsights
-              <h1>All rights reserved.</h1>
-            </h1>
-            <h1 className="text-[16px] leading-7 font-[400] text-textColor mt-1">
+              <h2>All rights reserved.</h2>
+            </h2>
+            <h2 className="text-[16px] leading-7 font-[400] text-textColor mt-1">
               Support: bhawnagupta7250@gmail.com
-            </h1>
+            </h2>
             <div className="flex items-center gap-3 mt-4 pb-2">
               {socialLinks.map((item, index) => (
                 <Link

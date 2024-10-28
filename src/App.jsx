@@ -28,15 +28,15 @@ function App() {
   return (
     <div className="relative">
       <Header />
-      <div className="">
+      <div>
         {/* Lottie background (below layer) */}
-        <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 -z-10 -mt-[80px] md:mt-0 h-full">
           <Lottie options={bgAni} />
         </div>
 
         {/* Content (upper layer) */}
-        <div className="bg-blue-0 mx-auto my-2 bg-clip-padding backdrop-filter h-[500px] md:h-[640px] w-[350px] rounded-2xl md:w-[550px] backdrop-blur-sm bg-opacity-20 border border-black flex flex-col items-center gap-4">
-          <h1 className=" text-headingColor md:text-3xl text-xl mt-8">
+        <div className="bg-blue-0 mx-auto my-2 bg-clip-padding backdrop-filter h-[500px] md:h-[640px] w-[350px] rounded-2xl md:w-[550px] backdrop-blur-sm bg-opacity-20 border border-primaryColor flex flex-col items-center gap-4">
+          <h1 className=" text-primaryColor md:text-3xl text-xl mt-8">
             BIHAR CURRENT AFFAIRS
           </h1>
           <p1 className="text-[12px] md:text-[16px] leading-7 md:font-[400] text-wrap">
