@@ -36,10 +36,13 @@ function App() {
 
         {/* Content (upper layer) */}
         <div className="bg-blue-0 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100 flex flex-col items-center gap-4">
-          <h1 className="text-primaryColor md:text-3xl text-2xl font-extrabold font-sans mt-8">
+          <h1 className="text-primaryColor md:text-3xl text-2xl font-extrabold mt-8">
             BIHAR CURRENT AFFAIRS
           </h1>
-          <div className="h-[40px]">
+          <p1 className="text-[16px] leading-7 font-[400]">
+            A single platform for all the bihar resources you need ! 👋
+          </p1>
+          <div className="h-[45px]">
             <Lottie options={defaultOptions} />
           </div>
           <PDFList />

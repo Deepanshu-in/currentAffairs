@@ -1,6 +1,6 @@
 import logo from "../assets/logo.json";
 import { Link, NavLink } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { BiMenu } from "react-icons/bi";
 import Lottie from "react-lottie";
 
@@ -50,7 +50,7 @@ const Header = () => {
   // });
   return (
     <header
-      className="header flex items-center border border-b-2 p-6"
+      className="header flex items-center border border-b-primaryColor p-4"
       ref={headerRef}
     >
       <div className="container">
