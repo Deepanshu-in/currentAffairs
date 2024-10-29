@@ -27,52 +27,50 @@ const Header = () => {
   return (
     <>
       <header className="h-full w-full bg-blue-300 py-4 md:py-2 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30 border-b border-purpleColor">
-        <div className="container">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <div className="h-[60px] md:h-[80px]">
-              <Link to="/">
-                <Lottie options={defaultOptions} />
-              </Link>
-            </div>
-            <h1 className="md:hidden text-xl text-primaryColor">
-              Bihar Insights
-            </h1>
+        <div className="flex items-center justify-around">
+          {/* Logo */}
+          <div className="h-[60px] md:h-[80px]">
+            <Link to="/">
+              <Lottie options={defaultOptions} />
+            </Link>
+          </div>
+          <h1 className="md:hidden text-xl font-semibold text-primaryColor">
+            Bihar Insights
+          </h1>
 
-            {/* Navigation Menu */}
-            <nav className="hidden md:flex items-center gap-6 md:gap-[2.7rem]">
-              <ul className="menu flex items-center gap-6">
-                {navLinks.map((item, index) => (
-                  <li key={index}>
-                    <NavLink
-                      to={item.path}
-                      className={(navClass) =>
-                        navClass.isActive
-                          ? "text-primaryColor text-[16px] leading-7 font-[600]"
-                          : "text-textColor text-[16px] leading-7 font-[600] hover:text-primaryColor"
-                      }
-                    >
-                      {item.display}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+          {/* Navigation Menu */}
+          <nav className="hidden md:flex items-center gap-6 md:gap-[2.7rem]">
+            <ul className="menu flex items-center gap-6">
+              {navLinks.map((item, index) => (
+                <li key={index}>
+                  <NavLink
+                    to={item.path}
+                    className={(navClass) =>
+                      navClass.isActive
+                        ? "text-primaryColor text-[16px] leading-7 font-[600]"
+                        : "text-textColor text-[16px] leading-7 font-[600] hover:text-primaryColor"
+                    }
+                  >
+                    {item.display}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-            {/* Mobile Menu Toggle */}
-            <div className="md:hidden flex items-center">
-              {isSidebarOpen ? (
-                <RxCross1
-                  className="h-6 w-6 cursor-pointer"
-                  onClick={toggleSidebar}
-                />
-              ) : (
-                <BiMenu
-                  className="h-6 w-6 cursor-pointer"
-                  onClick={toggleSidebar}
-                />
-              )}
-            </div>
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden flex items-center">
+            {isSidebarOpen ? (
+              <RxCross1
+                className="h-6 w-6 cursor-pointer"
+                onClick={toggleSidebar}
+              />
+            ) : (
+              <BiMenu
+                className="h-6 w-6 cursor-pointer"
+                onClick={toggleSidebar}
+              />
+            )}
           </div>
         </div>
       </header>
