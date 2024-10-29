@@ -36,11 +36,11 @@ function App() {
 
         {/* Content (upper layer) */}
         <div className="bg-gray-400 shadow-2xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10   h-[500px] md:h-[640px] w-[320px] rounded-2xl md:w-[550px] mx-auto my-4 border border-purpleColor flex flex-col items-center gap-4">
-          <h1 className=" text-primaryColor md:text-3xl text-xl mt-8">
+          <h1 className=" text-primaryColor leading-5 font-semibold md:text-3xl text-xl mt-8">
             BIHAR CURRENT AFFAIRS
           </h1>
-          <h2 className="text-[16px] md:text-[24px] leading-7 md:font-[400] text-wrap">
-            Your One-Stop Platform for BPSC Aspirants! 📚
+          <h2 className="text-[20px] md:text-[24px] leading-7 md:font-[400] text-wrap">
+            One-Stop Solution for BPSC Aspirants! 📚
           </h2>
 
           <div className="h-[45px]">
