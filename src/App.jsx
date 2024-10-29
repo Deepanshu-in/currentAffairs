@@ -40,7 +40,7 @@ function App() {
             BIHAR CURRENT AFFAIRS
           </h1>
           <h2 className="text-[16px] md:text-[24px] leading-7 md:font-[400] text-wrap">
-            Your One-Stop Platform for Bihar&apos;s Educational Needs! 👋
+            One-Stop Platform for Bihar&apos;s Educational Needs! 📚
           </h2>
 
           <div className="h-[45px]">
