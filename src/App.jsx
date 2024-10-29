@@ -35,7 +35,7 @@ function App() {
         </div>
 
         {/* Content (upper layer) */}
-        <div className="bg-gray-100  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0   h-[500px] md:h-[640px] w-[320px] rounded-2xl md:w-[550px] mx-auto my-4 border border-purpleColor flex flex-col items-center gap-4">
+        <div className="bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10   h-[500px] md:h-[640px] w-[320px] rounded-2xl md:w-[550px] mx-auto my-4 border border-purpleColor flex flex-col items-center gap-4">
           <h1 className=" text-primaryColor md:text-3xl text-xl mt-8">
             BIHAR CURRENT AFFAIRS
           </h1>
