@@ -56,7 +56,7 @@ const PDFList = () => {
             {folders.map((folder, index) => (
               <li key={index} className="mb-4">
                 <div
-                  className="flex items-center justify-between w-[300px] md:w-[500px] border border-white shadow-lg bg-purpleColor text-white py-2 px-4 rounded-lg cursor-pointer"
+                  className="flex items-center justify-between w-[300px] md:w-[500px] border border-white shadow-lg bg-purple-700 text-white py-2 px-4 rounded-lg cursor-pointer"
                   onClick={() => handleToggle(index)}
                 >
                   <span>{folder.folderPath.toUpperCase()}</span>
