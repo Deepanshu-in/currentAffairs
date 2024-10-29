@@ -35,13 +35,13 @@ function App() {
         </div>
 
         {/* Content (upper layer) */}
-        <div className="bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30  h-[500px] md:h-[640px] w-[350px] rounded-2xl md:w-[550px] mx-auto my-4 border border-purpleColor flex flex-col items-center gap-4">
+        <div className="bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30  h-[500px] md:h-[640px] w-[320px] rounded-2xl md:w-[550px] mx-auto my-4 border border-purpleColor flex flex-col items-center gap-4">
           <h1 className=" text-primaryColor md:text-3xl text-xl mt-8">
             BIHAR CURRENT AFFAIRS
           </h1>
-          <p1 className="text-[12px] md:text-[16px] leading-7 md:font-[400] text-wrap">
+          <h2 className="text-[16px] md:text-[24px] leading-7 md:font-[400] text-wrap">
             A single platform for all the bihar resources you need ! 👋
-          </p1>
+          </h2>
           <div className="h-[45px]">
             <Lottie options={defaultOptions} />
           </div>

@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
 import Lottie from "react-lottie";
 import logo from "../assets/logo.json";
+import { RxCross1 } from "react-icons/rx";
 
 const navLinks = [
   { path: "/", display: "Home" },
@@ -60,10 +61,17 @@ const Header = () => {
 
             {/* Mobile Menu Toggle */}
             <div className="md:hidden flex items-center">
-              <BiMenu
-                className="h-6 w-6 cursor-pointer"
-                onClick={toggleSidebar}
-              />
+              {isSidebarOpen ? (
+                <RxCross1
+                  className="h-6 w-6 cursor-pointer"
+                  onClick={toggleSidebar}
+                />
+              ) : (
+                <BiMenu
+                  className="h-6 w-6 cursor-pointer"
+                  onClick={toggleSidebar}
+                />
+              )}
             </div>
           </div>
         </div>
